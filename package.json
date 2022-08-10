@@ -1,0 +1,24 @@
+{
+  "name": "sagavox",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bin": {
+    "sagavox": "./index.js"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^1.8.3",
+    "axios": "^0.27.2",
+    "chalk": "^5.0.1",
+    "react-redux": "^8.0.2",
+    "redux": "^4.2.0",
+    "redux-saga": "^1.1.3"
+  }
+}
