@@ -13,17 +13,16 @@ class CheckSaga {
             let newContent = '';
 
             if (index.includes('<App/>')) {
-                newContent = index.replace('<App/>', '<Provider store={store}>\n\t\t\t<App />\n\t\t</Provider>');
+                newContent = index.replace('<App/>', '\t<Provider store={store}>\n\t\t\t<App />\n\t\t</Provider>');
             } else if (index.includes('<App />')) {
-                newContent = index.replace('<App />', '<Provider store={store}>\n\t\t\t<App />\n\t\t</Provider>');
-                console.log(newContent)
+                newContent = index.replace('<App />', '\t<Provider store={store}>\n\t\t\t<App />\n\t\t</Provider>');
             }
 
             if (newContent && !newContent.includes(['import store '])) {
                 let replaced = newContent.search("import App from './App';") >= 0;
                 if(replaced) {
                     newContent = newContent.replace("import App from './App';",
-                        "import App from './App';\nimport store from './store';\nimport { Provider } from 'react-redux';")
+                        "import App from './App';\nimport { store } from './store';\nimport { Provider } from 'react-redux';")
                 }
             }
 
@@ -34,7 +33,9 @@ class CheckSaga {
             RootSaga.make();
             Store.make();
 
-            console.log(chalk.greenBright('Your project has been wrapped by react saga. ')+'You can check ./index.js.');
+            console.log(chalk.greenBright('Your project has been wrapped by react saga.'));
+            console.log(chalk.dim('You can check ./index.js.'));
+            console.log(chalk.yellow("Let's continue with ") + chalk.greenBright('sagavox -p') + chalk.yellow(" command."));
         } catch (e) {
             console.log(chalk.red(e.message));
             console.log(chalk.cyan('Please check the documentation and re-run again.'));
@@ -44,7 +45,3 @@ class CheckSaga {
 }
 
 export default CheckSaga;
-
-// let f = fs.readFileSync("undex.js", {encoding:'utf8', flag:'r'});
-// f = f.replace('<App />', '<Provider store={store}>\n\t\t\t<App />\n\t\t</Provider>')
-// fs.writeFileSync("undex.js", f);

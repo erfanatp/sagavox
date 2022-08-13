@@ -7,7 +7,7 @@ const __filename = path.basename(fileURLToPath(import.meta.url));
 class Action {
 
     static make = (name) => {
-        const dir = `./src/${name}/${__filename}`;
+        const dir = `./src/pages/${name}/${__filename}`;
         const upperName = name.toUpperCase();
         let content = `import {${upperName}, ${upperName}_FAILED, ${upperName}_SUCCESS} from "./constants";\n`;
         content += `\n`;
