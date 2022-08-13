@@ -1,15 +1,32 @@
 {
   "name": "sagavox",
-  "version": "0.0.1",
-  "description": "",
+  "version": "0.1.0",
+  "description": "Make your react project redux-saga friendly, generate necessary react redux saga files.",
   "main": "index.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "react", "redux", "saga", "redux-saga", "file generator", "boilerplate", "sagavox"
+  ],
+  "author": "Erfan Attarzadeh",
+  "contributors": [
+    {
+      "name": "Erfan Attarzadeh",
+      "email": "erfan.atp@gmail.com",
+      "url": "https://github.com/erfanatp"
+    }
+  ],
+  "bugs": {
+    "url": "https://github.com/erfanatp/sagavox/issues/new"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/erfanatp/sagavox"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/erfanatp/sagavox",
   "bin": {
     "sagavox": "./index.js"
   },

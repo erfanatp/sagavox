@@ -7,7 +7,7 @@ const __filename = path.basename(fileURLToPath(import.meta.url));
 class Constants {
 
     static make = (name) => {
-        const dir = `./src/${name}/${__filename}`;
+        const dir = `./src/pages/${name}/${__filename}`;
         const upperName = name.toUpperCase();
         let content = `export const ${upperName} = "app/${name}/${upperName}";\n`;
         content += `export const ${upperName}_SUCCESS = "app/${name}/${upperName}_SUCCESS";\n`;

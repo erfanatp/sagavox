@@ -8,15 +8,15 @@ const __filename = path.basename(fileURLToPath(import.meta.url));
 class API {
 
     static make = (name) => {
-        const dir = `./src/${name}/${__filename}`;
-        const upperName = name.toUpperCase();
+        const dir = `./src/pages/${name}/${__filename}`;
         let content = `import axios from "axios";\n`;
         content += `\n`;
         content += `const api = {\n`;
-        content += `    get${capitalizeFirstLetter(name)}: async (\${${name}}) => {\n`;
-        content += `        const {data} = await axios.get('url');\n`;
-        content += `        return data;\n`;
-        content += `    },\n`;
+        content += `\tget${capitalizeFirstLetter(name)}: async ({INPUTS}) => {\n`;
+        content += `\t\tconst url = "https://jsonplaceholder.typicode.com/users"\n`;
+        content += `\t\tconst {data} = await axios.get(url);\n`;
+        content += `\t\treturn data;\n`;
+        content += `\t},\n`;
         content += `};\n`;
         content += `\n`;
         content += `export default api;\n`;
